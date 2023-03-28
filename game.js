@@ -21,7 +21,7 @@ function addToProposition(){
             if (userWord == theWord) {
                 finalOut = `<a id="good">${userWord}</a>`
                 alert(`Partie gagnée, le mot était ${theWord} trouvé en ${tryno} essai(s)`)
-                window.location.href = "../";
+                history.back()
             } else {
                 for (var i = 0; i < userWord.length; i++) {
                     if (theWord[i] == userWord[i]) {
@@ -39,7 +39,7 @@ function addToProposition(){
         }
     } else {
         alert(`Partie perdue, le mot était ${theWord}`)
-        window.location.href = "../";
+        history.back()
     }
 }
 
