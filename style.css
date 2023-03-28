@@ -1,0 +1,23 @@
+html {
+    font-family: Arial, Helvetica, sans-serif; 
+    overflow-x: hidden;
+    color: white;
+}
+body {
+    background: transparent;
+    background: linear-gradient(120deg, #00306e 50%, #00f7ff 95%);
+    background-attachment: fixed;
+}
+h1 {
+    font-size: 350%
+}
+div#button {
+    background: gray;
+    padding: 4px;
+    border-radius: 4px;
+    width: fit-content;
+}
+div#button a {
+    text-decoration: none;
+    color: black;
+}

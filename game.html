@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./game.css">
+    <title>MotuWeb - InGame</title>
+  </head>
+  <body>
+    <h1>MotuWeb</h1>
+    <div class="load">
+        <p>Chargement en cours</p>
+    </div>
+    <div class="game hide">
+        <p id="lengthword"></p>
+        <div class="wordzone">
+            <p id="no1"></p>
+            <p id="no2"></p>
+            <p id="no3"></p>
+            <p id="no4"></p>
+            <p id="no5"></p>
+        </div>
+        <div class="typezone">
+            <input id="typezone" type="text" placeholder="Entrez votre proposition">
+            <!--<button id="button">Commencer une partie</button>-->
+        </div>
+    </div>
+
+  </body>
+  <script src="./words.js"></script>
+  <script src="./game.js"></script>
+</html>

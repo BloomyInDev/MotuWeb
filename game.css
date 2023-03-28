@@ -1,0 +1,15 @@
+div.wordzone p {
+    font-size: 200%;
+}
+a#good {
+    background-color: #01be01;
+}
+a#inword {
+    background-color: #ff9100
+}
+a#bad {
+    background-color: #ad0000
+}
+.hide {
+    display: none;
+}
