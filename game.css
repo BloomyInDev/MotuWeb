@@ -10,6 +10,9 @@ a#inword {
 a#bad {
     background-color: #ad0000
 }
+a#gray {
+    background-color: #a5a5a5;
+}
 .hide {
     display: none;
 }

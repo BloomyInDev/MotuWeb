@@ -46,6 +46,7 @@ function addToProposition(){
 var tryno = -1
 var theWord = chooseWord().toUpperCase()
 document.getElementById("lengthword").innerHTML = `Le mot est de longueur ${theWord.length}`
+document.getElementById("hint").innerHTML = '<a id="good">'+theWord[0]+'</a><a id="gray">'+'*'.repeat(theWord.length-1)+"</a>"
 document.getElementsByClassName("load")[0].classList.add("hide")
 document.getElementsByClassName("game")[0].classList.remove("hide")
 const textzone = document.getElementById("typezone");
