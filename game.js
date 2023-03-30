@@ -10,6 +10,13 @@ function chooseWord() {
     }
     return randomWord
 }
+function copyList(originalList){
+    newList = []
+    for (i = 0; i < originalList.length; i++) {
+        newList[i] = originalList[i];
+    }
+    return newList
+}
 function addToProposition(){
     var userWord = document.getElementById("typezone").value.toUpperCase();
     if (tryno != 4) {
@@ -23,14 +30,19 @@ function addToProposition(){
                 alert(`Partie gagnée, le mot était ${theWord} trouvé en ${tryno} essai(s)`)
                 history.back()
             } else {
+                testFromUser = copyList(listOfTheWord)
                 for (var i = 0; i < userWord.length; i++) {
-                    if (theWord[i] == userWord[i]) {
+                    console.log(userWord[i], testFromUser.indexOf(userWord[i]))
+                    if (testFromUser.indexOf(userWord[i]) == i) {
+                        testFromUser.splice(testFromUser.indexOf(userWord[i]),1)
                         finalOut+=`<a id="good">${userWord[i]}</a>`
-                    } else if (theWord.includes(userWord[i])) {
+                    } else if (testFromUser.indexOf(userWord[i]) != -1) {
+                        testFromUser.splice(testFromUser.indexOf(userWord[i]),1)
                         finalOut+=`<a id="inword">${userWord[i]}</a>`
                     } else {
                         finalOut+=`<a id="bad">${userWord[i]}</a>`
                     }
+                    console.log(testFromUser)
                 }
             }
             line.innerHTML = finalOut
@@ -45,6 +57,8 @@ function addToProposition(){
 
 var tryno = -1
 var theWord = chooseWord().toUpperCase()
+var listOfTheWord = copyList(theWord)
+console.log(listOfTheWord)
 document.getElementById("lengthword").innerHTML = `Le mot est de longueur ${theWord.length}`
 document.getElementById("hint").innerHTML = '<a id="good">'+theWord[0]+'</a><a id="gray">'+'*'.repeat(theWord.length-1)+"</a>"
 document.getElementsByClassName("load")[0].classList.add("hide")
