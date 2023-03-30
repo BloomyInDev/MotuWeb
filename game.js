@@ -32,17 +32,17 @@ function addToProposition(){
             } else {
                 testFromUser = copyList(listOfTheWord)
                 for (var i = 0; i < userWord.length; i++) {
-                    console.log(userWord[i], testFromUser.indexOf(userWord[i]))
+                    //console.log(userWord[i], testFromUser.indexOf(userWord[i]))
                     if (testFromUser.indexOf(userWord[i]) == i) {
-                        testFromUser.splice(testFromUser.indexOf(userWord[i]),1)
+                        testFromUser[i]=-1
                         finalOut+=`<a id="good">${userWord[i]}</a>`
                     } else if (testFromUser.indexOf(userWord[i]) != -1) {
-                        testFromUser.splice(testFromUser.indexOf(userWord[i]),1)
+                        testFromUser[i]=-1
                         finalOut+=`<a id="inword">${userWord[i]}</a>`
                     } else {
                         finalOut+=`<a id="bad">${userWord[i]}</a>`
                     }
-                    console.log(testFromUser)
+                    //console.log(testFromUser)
                 }
             }
             line.innerHTML = finalOut
@@ -58,7 +58,7 @@ function addToProposition(){
 var tryno = -1
 var theWord = chooseWord().toUpperCase()
 var listOfTheWord = copyList(theWord)
-console.log(listOfTheWord)
+//console.log(listOfTheWord)
 document.getElementById("lengthword").innerHTML = `Le mot est de longueur ${theWord.length}`
 document.getElementById("hint").innerHTML = '<a id="good">'+theWord[0]+'</a><a id="gray">'+'*'.repeat(theWord.length-1)+"</a>"
 document.getElementsByClassName("load")[0].classList.add("hide")
