@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./game.css">
     <link rel="stylesheet" href="./me.css">
@@ -14,6 +12,7 @@
     <h1>MotuWeb</h1>
     <div class="load">
         <p>Chargement en cours</p>
+        <p>Si le jeu ne charge pas, veuillez autoriser l'execution de script JavaScript</p>
     </div>
     <div class="game hide">
         <p id="lengthword"></p>
@@ -27,10 +26,11 @@
         </div>
         <div class="typezone">
             <input id="typezone" type="text" placeholder="Entrez votre proposition">
+            <button id="buttonjs">Avoir un indice</button>
             <!--<button id="button">Commencer une partie</button>-->
         </div>
     </div>
-    <div class="bottom"><div class="littlebubble"><p>Fait avec ❤️ par <a href="https://github.com/BloomyInDev">Bloomy</a></p>
+    <div class="bottom"><div class="littlebubble"><p>Fait avec ❤️ par <a href="https://github.com/BloomyInDev">Bloomy</a><br><p>Version 1.2</p></p>
   </body>
   <script src="./words.js"></script>
   <script src="./game.js"></script>

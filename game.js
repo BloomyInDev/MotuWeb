@@ -32,8 +32,10 @@ function addToProposition(){
             } else {
                 testFromUser = copyList(listOfTheWord)
                 for (var i = 0; i < userWord.length; i++) {
+                    
                     //console.log(userWord[i], testFromUser.indexOf(userWord[i]))
                     if (testFromUser.indexOf(userWord[i]) == i) {
+                        if (lettersDiscovered[i] == -1) {lettersDiscovered.splice(i,1,theWord[i])}
                         testFromUser[i]=-1
                         finalOut+=`<a id="good">${userWord[i]}</a>`
                     } else if (testFromUser.indexOf(userWord[i]) != -1) {
@@ -58,6 +60,11 @@ function addToProposition(){
 var tryno = -1
 var theWord = chooseWord().toUpperCase()
 var listOfTheWord = copyList(theWord)
+var lettersDiscovered = []
+var canhint = true
+for (var i = 0; i < theWord.length; i++) {
+    if (i === 0) {lettersDiscovered.push(theWord[0])} else {lettersDiscovered.push(-1)}
+}
 //console.log(listOfTheWord)
 document.getElementById("lengthword").innerHTML = `Le mot est de longueur ${theWord.length}`
 document.getElementById("hint").innerHTML = '<a id="good">'+theWord[0]+'</a><a id="gray">'+'*'.repeat(theWord.length-1)+"</a>"
@@ -71,4 +78,24 @@ textzone.addEventListener("keyup", function(event) {
         addToProposition()
     }
 });
-
+document.getElementById("buttonjs").addEventListener('click', function(event) {
+    if (canhint) {
+        if (confirm("Êtes vous sur de vouloir un indice ?")) {
+            canhint = false
+            var retry = true
+            while (retry) {
+                var randomLetter = Math.random*lettersDiscovered.length
+                if (lettersDiscovered[randomLetter]==-1) {
+                    retry = false
+                }
+            }
+            lettersDiscovered.splice(randomLetter,1,theWord[randomLetter])
+            var finaltext = ""
+            lettersDiscovered.forEach(element => {
+                if (element != -1) {finaltext+='<a id="good">'+element+'</a>'} else {finaltext+='<a id="gray">*</a>'}
+            });
+            document.getElementById("hint").innerHTML = finaltext
+            alert("Votre indice est arrivé !")
+        }
+    }
+})
