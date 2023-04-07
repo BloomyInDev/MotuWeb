@@ -84,7 +84,7 @@ document.getElementById("buttonjs").addEventListener('click', function(event) {
             canhint = false
             var retry = true
             while (retry) {
-                var randomLetter = Math.random*lettersDiscovered.length
+                var randomLetter = Math.floor(Math.random() * theWord.length)
                 if (lettersDiscovered[randomLetter]==-1) {
                     retry = false
                 }
