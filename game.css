@@ -16,3 +16,15 @@ a#gray {
 .hide {
     display: none;
 }
+
+div.typezone {
+    width: fit-content;
+}
+div.typezone div.up, div.typezone div.down {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+button#youareanlooser {
+    width: 100%;
+}

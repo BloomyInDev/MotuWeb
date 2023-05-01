@@ -2,7 +2,7 @@ function chooseWord() {
     let randomWord = listword[Math.floor(Math.random() * listword.length)];
     var rerool = true;
     while (rerool) {
-        if (randomWord.length>4 && randomWord.length<10) {
+        if (randomWord.length>4 && randomWord.length<10 && randomWord === randomWord.toLowerCase()) {
             rerool = false;
         } else {
             randomWord = listword[Math.floor(Math.random() * listword.length)];
@@ -78,9 +78,9 @@ textzone.addEventListener("keyup", function(event) {
         addToProposition()
     }
 });
-document.getElementById("buttonjs").addEventListener('click', function(event) {
+document.getElementById("hintbutton").addEventListener('click', function(event) {
     if (canhint) {
-        if (confirm("Êtes vous sur de vouloir un indice ?")) {
+        if (confirm("Êtes-vous sur de vouloir un indice ?")) {
             canhint = false
             var retry = true
             while (retry) {
@@ -97,5 +97,11 @@ document.getElementById("buttonjs").addEventListener('click', function(event) {
             document.getElementById("hint").innerHTML = finaltext
             alert("Votre indice est arrivé !")
         }
+    }
+})
+document.getElementById("youareanlooser").addEventListener('click', function(event){
+    if (confirm("Êtes-vous sur de vouloir abandonner ?")) {
+        alert(`Partie perdue, le mot était ${theWord}`)
+        history.back()
     }
 })
