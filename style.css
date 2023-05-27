@@ -21,3 +21,8 @@ div#button a {
     text-decoration: none;
     color: black;
 }
+@media screen and (max-width:600px) {
+    h1 {
+        line-height: 0.5;
+    }
+}

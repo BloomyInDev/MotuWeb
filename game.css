@@ -1,17 +1,35 @@
 div.wordzone p {
     font-size: 200%;
 }
-a#good {
+div.line {
+    height: 50px;
+    width: fit-content;
+    display: flex;
+    justify-content:stretch;   
+}
+div.column {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.good {
     background-color: #01be01;
 }
-a#inword {
+.inword {
     background-color: #ff9100
 }
-a#bad {
+.bad {
     background-color: #ad0000
 }
-a#gray {
+.gray {
     background-color: #a5a5a5;
+}
+.border {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #888888;
 }
 .hide {
     display: none;

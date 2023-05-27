@@ -1,21 +1,41 @@
 html, body {
     height: 100%;
-    overflow: hidden}
+    overflow: hidden
+}
 body {
     position: relative;
     scrollbar-width: none;
 }
-.littlebubble {
-    position: absolute;
-    bottom: 2%;
-    right: 0;
-    background: gray;
-    padding: 10px;
-    border-radius: 8px;
-    width: 20%;
-    text-align: center;
+@media screen and (min-width:600px) {
+    .littlebubble {
+        position: absolute;
+        bottom: 2%;
+        right: 0;
+        background: gray;
+        padding: 10px;
+        border-radius: 8px;
+        width: 20%;
+        text-align: center;
+    }
+    .littlebubble a {
+        text-decoration: none;
+        color: rgb(210, 210, 210);
+    }
 }
-.littlebubble a {
-    text-decoration: none;
-    color: rgb(210, 210, 210);
+@media screen and (max-width:600px) {
+    .littlebubble {
+        position: absolute;
+        bottom: 2%;
+        right: 0;
+        background: gray;
+        padding: 10px;
+        border-radius: 8px;
+        width: 60%;
+        line-height: 0.2;
+        text-align: center;
+    }
+    .littlebubble a {
+        text-decoration: none;
+        color: rgb(210, 210, 210);
+    }
 }
