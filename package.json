@@ -1,16 +1,24 @@
 {
-  "name": "vite-project",
-  "private": true,
+  "name": "vuetest",
   "version": "0.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
     "dev": "vite",
-    "devext": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "previewext": "vite preview --host"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "vue": "^3.3.2"
   },
   "devDependencies": {
-    "vite": "^4.3.2"
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "eslint": "^8.39.0",
+    "eslint-plugin-vue": "^9.11.0",
+    "prettier": "^2.8.8",
+    "vite": "^4.3.5"
   }
 }
