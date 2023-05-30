@@ -7,7 +7,8 @@
     "dev": "vite",
     "devext": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "previewext": "vite preview --host"
   },
   "devDependencies": {
     "vite": "^4.3.2"

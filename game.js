@@ -2,7 +2,7 @@ function chooseWord() {
     let randomWord = listword[Math.floor(Math.random() * listword.length)];
     var rerool = true;
     while (rerool) {
-        if (randomWord.length>4 && randomWord.length<8 && randomWord === randomWord.toLowerCase()) {
+        if (randomWord.length>3 && randomWord.length<9 && randomWord === randomWord.toLowerCase()) {
             rerool = false;
         } else {
             randomWord = listword[Math.floor(Math.random() * listword.length)];
@@ -67,13 +67,15 @@ function addToProposition(){
     }
     updatehintzone()
 }
+console.log(getComputedStyle(document.querySelector('body')).getPropertyValue('--widthword'))
 var tryno = 0
 var theWord = chooseWord().toUpperCase()
 var listOfTheWord = copyList(theWord)
 var lettersDiscovered = []
 var canhint = true
+document.querySelector('body').style.setProperty('--widthword', `${80/theWord.length <= 20 ? 80/theWord.length : 15}vw`)
 for (var i = 0; i < theWord.length; i++) {
-    if (i === 0) {lettersDiscovered.push(theWord[0])} else {lettersDiscovered.push(-1)}
+    if (i === 0 || theWord[i]===lettersDiscovered[0]) {lettersDiscovered.push(theWord[0])} else {lettersDiscovered.push(-1)}
 }
 //console.log(listOfTheWord)
 document.getElementById("lengthword").innerHTML = `Le mot est de longueur ${theWord.length}`
@@ -87,7 +89,7 @@ textzone.maxLength = theWord.length
 updatehintzone()
 textzone.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
-        addToProposition2()
+        addToProposition()
     }
 });
 document.getElementById("hintbutton").addEventListener('click', function(event) {
@@ -112,4 +114,7 @@ document.getElementById("youareanlooser").addEventListener('click', function(eve
         alert(`Partie perdue, le mot était ${theWord}`)
         history.back()
     }
+})
+document.getElementById("getword").addEventListener('click', function(event){
+    alert(theWord)
 })
