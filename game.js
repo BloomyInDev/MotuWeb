@@ -18,7 +18,6 @@ function copyList(originalList){
     return newList
 }
 function updatehintzone(){
-    console.log(lettersDiscovered)
     var line = document.getElementsByClassName('hint')[0]
     line.innerHTML = ''
     for (var i = 0; i < lettersDiscovered.length; i++) {
@@ -114,7 +113,4 @@ document.getElementById("youareanlooser").addEventListener('click', function(eve
         alert(`Partie perdue, le mot était ${theWord}`)
         history.back()
     }
-})
-document.getElementById("getword").addEventListener('click', function(event){
-    alert(theWord)
 })
