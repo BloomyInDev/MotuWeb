@@ -1,10 +1,11 @@
+@import 'bootstrap/scss/bootstrap';
 html {
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
-    color: white;
 }
 body {
     background: transparent;
     background: linear-gradient(120deg, #00306e 50%, #00f7ff 95%);
     background-attachment: fixed;
+    color: white;
 }
