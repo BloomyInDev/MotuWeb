@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/icon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MotuWeb</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>MotuWeb</h1>
+            <div id="home">
+                <button id="btn-launch-game" class="btn btn-primary">Commencer</button>
+                <button id="btn-test" class="btn btn-danger">Test</button>
+                <p>Vous avez gagné <span id="winstreak"></span> parties d'affilé</p>
+                <p>
+                    Vous avez gagné <span id="wincount"></span> parties et perdu
+                    <span id="losscount"></span> parties
+                </p>
+                <p>Rapport Gagné/Perdu de <span id="winloss"></span></p>
+            </div>
+            <div id="game" class="hidden">div</div>
+        </div>
+        <div class="bottom">
+            <div class="littlebubble">
+                <p>Fait avec ❤️ par <a href="https://github.com/BloomyInDev">Bloomy</a></p>
+                <p><a href="https://github.com/BloomyInDev/MotuWeb">Code Source</a></p>
+                <p>Version 2.0</p>
+            </div>
+        </div>
+        <script type="module" src="/index.js"></script>
+    </body>
+</html>
