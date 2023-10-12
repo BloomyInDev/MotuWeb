@@ -1,5 +1,5 @@
 import './style.css'
-
+import { chooseWord, wordProposal } from './game'
 let scores = ['winloss', 'winstreak', 'wincount', 'losecount']
 scores.forEach((e) => {
     if (localStorage.getItem(e) == null) {
@@ -20,8 +20,16 @@ document.getElementById('losscount').innerText = stats.losscount.toString()
 
 let home = document.querySelector('#home')
 let game = document.querySelector('#game')
-
-document.getElementById('btn-launch-game').addEventListener('click', (ev) => {
-    home.classList.add('hidden')
-    game.classList.remove('hidden')
-})
+let word = ''
+document.getElementById('btn-launch-game').addEventListener(
+    'click',
+    (ev) => {
+        ev.stopImmediatePropagation()
+        home.classList.add('hidden')
+        game.classList.remove('hidden')
+        word = chooseWord()
+        document.querySelector('#wordtotrove').innerText = word
+        print(word)
+    },
+    true
+)

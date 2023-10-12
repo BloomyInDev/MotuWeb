@@ -1,6 +1,6 @@
 import { words } from './wordsProcessing'
-
+words[1]
 export const chooseWord = () => {
-    return words[Math.floor(Math.random * words.length)]
+    return words[1]
 }
 export const wordProposal = (word) => {}
