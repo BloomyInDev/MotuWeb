@@ -9,7 +9,7 @@ import './style.css'
 export function App() {
     return (
         <LocationProvider>
-            <h1 class="text-4xl mb-2">MotuWeb</h1>
+            <h1 class="text-4xl mb-2 text-center">MotuWeb</h1>
             <main>
                 <Router>
                     <Route path="/" component={Home} />

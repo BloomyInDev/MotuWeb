@@ -1,8 +1,9 @@
 import rawWords from '../assets/words.json'
 
-export const words = rawWords.filter(
+const filteredWords = rawWords.filter(
     (word) => word == word.toLowerCase() && word.length >= 4 && word.length <= 8
 )
+export const words = filteredWords.map(word => word.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
 export const randomWord = () => {
     return words[Math.floor(Math.random() * words.length)]
 }
@@ -11,9 +12,9 @@ export const checkWord = (wordToTrove, proposition) => {
     let charListOfWordToTrove = wordToTrove.split('')
     return {
         valid: wordToTrove == proposition,
-        proposition: proposition,
+        proposition,
         word: proposition.split('').map((char, index) => {
-            let valueReturn = { char: char, status: 0 }
+            let valueReturn = { char, status: 0 }
             if (char == wordToTrove[index]) {
                 charListOfWordToTrove = charListOfWordToTrove.filter(
                     (v) =>
@@ -29,7 +30,6 @@ export const checkWord = (wordToTrove, proposition) => {
                 )
                 valueReturn.status = 1
             }
-            console.warn(charListOfWordToTrove)
             return valueReturn
         }),
     }
