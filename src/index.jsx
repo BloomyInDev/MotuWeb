@@ -17,6 +17,28 @@ export function App() {
                     <Route default component={NotFound} />
                 </Router>
             </main>
+            <div class="absolute bottom-1 right-1">
+                <div class="bg-gray-500 p-2 rounded-lg text-center">
+                    <p>
+                        Fait avec ❤️ par
+                        <a
+                            href="https://github.com/BloomyInDev"
+                            class="text-gray-300 before:content-['_']"
+                        >
+                            Bloomy
+                        </a>
+                    </p>
+                    <p>
+                        <a
+                            href="https://github.com/BloomyInDev/MotuWeb"
+                            class="text-gray-300"
+                        >
+                            Code Source
+                        </a>
+                    </p>
+                    <p>Version 2.0</p>
+                </div>
+            </div>
         </LocationProvider>
     )
 }
