@@ -17,7 +17,7 @@ export function Game() {
             return i == 0 ? { char, status: 2 } : { char: '*', status: -1 }
         }),
     })
-    let value = ''
+    let value = '', disableInput = false
     const setValue = (v) => {
         value = v
     }
@@ -28,6 +28,7 @@ export function Game() {
     const onInputInInput = (e) => {
         setValue(e.target.value)
         if (value.length == wordChoosen.length) {
+            disableInput = true
             addToPropositionList(checkWord(wordChoosen, value))
             if (propositionList.at(-1).valid) {
                 localStorage.setItem(
@@ -44,6 +45,7 @@ export function Game() {
                 window.location.href = '/'
             }
             resetValue(e)
+            disableInput = false
         }
     }
 
@@ -61,6 +63,7 @@ export function Game() {
                     class="m-1 p-1 bg-white text-black max-w-lg w-full rounded-lg"
                     type="text"
                     onInput={onInputInInput}
+                    disabled={disableInput}
                 />
                 <div className="max-w-lg w-full flex flex-col justify-center items-center">
                     <button class="m-1 p-1 border-white border-2 bg-slate-500 text-white w-full rounded-lg">

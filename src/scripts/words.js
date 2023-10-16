@@ -1,10 +1,11 @@
 import rawWords from '../assets/words.json'
 
+export const normalizeWord = (word) => word.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 const filteredWords = rawWords.filter(
     (word) => word == word.toLowerCase() && word.length >= 4 && word.length <= 8
 )
 export const words = filteredWords.map((word) =>
-    word.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    normalizeWord(word)
 )
 export const randomWord = () => {
     return words[Math.floor(Math.random() * words.length)]
