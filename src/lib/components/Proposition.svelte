@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { WordProposition } from "../lib/words";
+    import type { WordProposition } from "../words";
     import CharProposition from "./CharProposition.svelte";
     export let word: WordProposition;
 </script>
