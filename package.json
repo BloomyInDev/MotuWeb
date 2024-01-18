@@ -1,28 +1,25 @@
 {
-    "name": "motuweb",
-    "version": "1.4.0",
-    "private": false,
-    "scripts": {
-        "dev": "vite",
-        "devext": "vite --host",
-        "build": "vite build",
-        "preview": "vite preview",
-        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-        "format": "prettier --write src/"
-    },
-    "dependencies": {
-        "@popperjs/core": "^2.11.8",
-        "bootstrap": "^5.3.0",
-        "vue": "^3.3.2"
-    },
-    "devDependencies": {
-        "@rushstack/eslint-patch": "^1.2.0",
-        "@vitejs/plugin-vue": "^4.2.3",
-        "@vue/eslint-config-prettier": "^7.1.0",
-        "eslint": "^8.39.0",
-        "eslint-plugin-vue": "^9.11.0",
-        "prettier": "^2.8.8",
-        "sass": "^1.62.1",
-        "vite": "^4.3.5"
-    }
+  "name": "motuweb-svelte",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "@tsconfig/svelte": "^3.0.0",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "prettier": "^3.2.4",
+    "svelte": "^3.55.1",
+    "svelte-check": "^2.10.3",
+    "tailwindcss": "^3.4.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
 }
